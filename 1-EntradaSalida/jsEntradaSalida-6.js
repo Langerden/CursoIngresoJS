@@ -8,11 +8,6 @@ var numero2
 
 numero1 = document.getElementById("numeroUno").value;
 numero2 = document.getElementById("numeroDos").value;
-numero1 = parseInt(numero1);
-numero2 = parseInt(numero2);
-
-numerofinal = sumar(numero1+numero2);
-
-alert(numerofinal);
+alert("La suma es " + (parseInt(numero1) + parseInt(numero2)));
 }
 

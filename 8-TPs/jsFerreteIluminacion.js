@@ -23,6 +23,9 @@ if (cantidad >= 6){
     impuesto = (descuento * 10) / 100
     alert("Usted pago " + impuesto)
 }
+if (cantidad <= 2){
+    document.getElementById("precioDescuento").value = "No tiene descuento por rata"
+}
 switch (marca)
 {
     case "ArgentinaLuz":

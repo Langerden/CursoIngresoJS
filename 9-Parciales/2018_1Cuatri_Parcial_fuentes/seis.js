@@ -28,11 +28,17 @@ switch (hora)
     case 22:
     case 23:
     case 24:
-        if (hora != 24)
+    case 1:
+    case 2:
+    case 3:
+    case 4:
+    case 5:
+
+        if (hora <= 24 && hora >= 20)
         {
-        alert("A mimir")
-        } else {
         alert("Es de noche")
+        } else {
+        alert("A mimir")
         }
         break;
     default:

@@ -10,6 +10,7 @@ E.	Si el importe final con descuento suma más de $120  se debe sumar un 10% de 
  */
 function CalcularPrecio () 
 {
+<<<<<<< HEAD
  var preciolampara = 35
  var cantidad
  var marca
@@ -94,4 +95,70 @@ switch (marca)
 
 
 
+=======
+var cantidad = document.getElementById("Cantidad").value
+var marca = document.getElementById("Marca").value
+var precioxcant = cantidad * 35
+var descuento
+var impuesto
+cantidad = parseInt(cantidad)
+if (cantidad >= 6){
+    descuento = (precioxcant + (precioxcant * 50 / 100))
+    document.getElementById("precioDescuento").value = descuento
+} else if (descuento > 120) {
+    impuesto = (descuento * 10) / 100
+    alert("Usted pago " + impuesto)
+}
+if (cantidad <= 2){
+    document.getElementById("precioDescuento").value = "No tiene descuento por rata"
+}
+switch (marca)
+{
+    case "ArgentinaLuz":
+        if (cantidad == 5) {
+            descuento = (precioxcant + (precioxcant * 40 / 100))
+        } else if (cantidad == 4) {
+            descuento = (precioxcant + (precioxcant * 25 / 100))
+        } else if (cantidad == 3){
+            descuento = precioxcant + (precioxcant * 15 / 100)
+        }
+        if (descuento > 120) {
+            impuesto = (descuento * 10 / 100)
+            document.getElementById("precioDescuento").value = "Precio con descuento: " + descuento + " y pago de impuestos: " + impuesto
+        } else {
+            document.getElementById("precioDescuento").value = descuento
+        }
+        break;
+   case "FelipeLamparas":
+        if (cantidad == 5) {
+        descuento = (precioxcant + (precioxcant * 30 / 100))
+        } else if (cantidad == 4) {
+            descuento = (precioxcant + (precioxcant * 25 / 100))
+        } else if (cantidad == 3) {
+            descuento = (precioxcant + (precioxcant * 10 / 100))
+        }
+        if (descuento > 120) {
+            impuesto = (descuento * 10 / 100)
+            document.getElementById("precioDescuento").value = "Precio con descuento: " + descuento + " y pago de impuestos: " + impuesto
+        } else {
+            document.getElementById("precioDescuento").value = descuento
+        }
+        break;
+    default:
+        if (cantidad == 5) {
+            descuento = (precioxcant + (precioxcant * 30 / 100))
+        } else if (cantidad == 4) {
+            descuento = (precioxcant + (precioxcant * 20 / 100))
+        } else if (cantidad == 3){
+            descuento = precioxcant + (precioxcant * 5 / 100)
+        }
+        if (descuento > 120) {
+            impuesto = (descuento * 10 / 100)
+            document.getElementById("precioDescuento").value = "Precio con descuento: " + descuento + " y pago de impuestos: " + impuesto
+        } else {
+            document.getElementById("precioDescuento").value = descuento
+        }
+        break;
+}
+>>>>>>> 0e7cb917be40b8e18413b613aba5ca9dbf92d911
 }

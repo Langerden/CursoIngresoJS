@@ -13,7 +13,7 @@ function CalcularPrecio ()
 var cantidad = document.getElementById("Cantidad").value
 var marca = document.getElementById("Marca").value
 var precioxcant = cantidad * 35
-var descuento = ""
+var descuento 
 var impuesto
 cantidad = parseInt(cantidad)
 
@@ -54,7 +54,7 @@ switch (marca)
         break;
 }
 if (cantidad <= 2){
-    document.getElementById("precioDescuento").value = "No tiene descuento"
+    document.getElementById("precioDescuento").value = precioxcant
 } else if (descuento > 120) {
     impuesto = (descuento * 10 / 100)
     document.getElementById("precioDescuento").value = "Precio con descuento: " + descuento + " y pago de impuestos: " + impuesto

@@ -2,16 +2,13 @@ function mostrar()
 {
 
 	var contador=0;
-	// declarar variables
-	
 	var respuesta='si';
 
 	while(respuesta!='no')
 	{
-		
-	
+	var numero = parseInt (prompt("Ingrese numero"))
 	}
-
+}
 
 
 

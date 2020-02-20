@@ -1,6 +1,11 @@
+var numero = 1
 function mostrar()
 {
-	alert('iteración while');
+	while(numero >= 1 && numero <= 10)
+	{
+		alert(numero)
+		numero++
+	}
 
 
 }//FIN DE LA FUNCIÓN

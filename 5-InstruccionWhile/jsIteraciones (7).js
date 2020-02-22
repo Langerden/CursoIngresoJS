@@ -7,7 +7,7 @@ function mostrar()
 while(respuesta == "si"){
 	var numero = parseInt (prompt("Ingrese numero"))
 	acumulador = acumulador + numero
-	respuesta = prompt("¿Quiere cargar otro numero?")
+	respuesta = prompt("¿Quiere cargar otro numero?").toLowerCase()
 	contador++
 }
 

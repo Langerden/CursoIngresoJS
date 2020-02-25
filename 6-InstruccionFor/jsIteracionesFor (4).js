@@ -1,7 +1,4 @@
-function mostrar()
+    function mostrar()
 {
-
-
-
 
 }//FIN DE LA FUNCIÓN

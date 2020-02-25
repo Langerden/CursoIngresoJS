@@ -3,44 +3,40 @@ function mostrar()
 var contador = 0
 var notas
 var sexo
-var notaMin
-var notaMax
+var acuNota = 0
+var acuSexo
 var sexoNotaMin
-var sexoNotaMax
-
-do {
+var cantHombres = 0
+do {  
     notas = parseInt(prompt("Nota del alumno"))
-    sexo = prompt("Sexo del alumno").toLowerCase
-    if (contador == 0){
+    while (isNaN(notas) || (notas < 1 || notas > 10))
+    {
+    notas = parseInt(prompt("Nota no valida, ingrese nota correcta"))
+    }
+    sexo = prompt("Sexo del alumno").toLowerCase()
+    while (sexo != "m" && sexo != "f")
+    {
+    sexo = prompt("Sexo no valido, Ingrese otra correctamente").toLowerCase()
+    }
+    acuNota += notas
+    if (contador == 0)
+    {
         numMax = notas
+        numMin = notas
+        acuSexo = sexo
+    }
+    if (sexo == "m" && notas >= 6)
+    {
+        cantHombres ++
+    }
+    if (notas < numMin)
+    {
         numMin = notas
         sexoNotaMin = sexo
-        sexoNotaMax = sexo
-    if (notas > numMax){
-        numMax = notas
-    } else if (notas < numMin){
-        numMin = notas
     }
-    }
+    contador ++ 
 } while (contador < 5);
-
-
-/*while(contNotas < 4){
-if (notas > 0 && notas < 10) {
-    acuNotas += notas
-    notas = parseInt(prompt("Ingrese otra nota"))
-    contNotas ++
-} else {
-    alert("Nota no valida")
-    notas = parseInt(prompt("Ingrese otra nota"))
-}
-}
-while(contSexo < 4){    
-    if (sexo == "f" || sexo == "m"){
-    } else {
-        alert ("Sexo no valido")
-        sexo = prompt("Ingrese otro sexo").toLocaleLowerCase
-    }
-} */
-alert("Promedio de notas " + (acuNotas / contNotas))
+alert("Promedio de notas = " + (acuNota / contador))
+alert("Sexo y Nota de la peor calificacion = " + sexoNotaMin + " " + numMin)
+alert("Cantidad de Varones aprobados = " + cantHombres)
 }

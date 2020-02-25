@@ -9,7 +9,7 @@ de no ser igual se debe informar si “falta…”  para llegar al número secre
 */
 var numeroSecreto;
 var numeroUsuario 
-var contadorIntentos = 1;
+var contadorIntentos = 0;
 function comenzar()
 {
 numeroSecreto = Math.floor(Math.random () * (101 - 1) + 1)
@@ -20,10 +20,19 @@ function verificar()
 {
 numeroUsuario = parseInt (document.getElementById("numero").value)
 if(numeroUsuario == numeroSecreto){
-  alert("Usted es un ganador y en solo intentos")
-} else if (numeroUsuario < numeroSecreto){
-  alert("Falta para llegar al numero secreto")
-} else {
-  alert("Se paso del numero secreto")
+  alert("Usted es un ganador y en solo " + contadorIntentos + " intentos")
 }
+while (numeroUsuario < numeroSecreto){
+contadorIntentos ++
+document.getElementById("intentos").value = contadorIntentos
+alert("Faltan " + (numeroSecreto - numeroUsuario) + " numeros")
+break;
 }
+while (numeroUsuario > numeroSecreto){
+  contadorIntentos ++
+document.getElementById("intentos").value = contadorIntentos
+alert("Se paso " + (numeroUsuario - numeroSecreto) + " numeros")
+break;
+}  
+}
+
